@@ -1,0 +1,94 @@
+%!TEX encoding = IsoLatin
+
+%
+% Exemple de rapport
+% par Pierre Tremblay, Universite Laval
+% modifié par Christian Gagne, Universite Laval
+% 14/01/2011 - version 1.3
+% modifié par Robert Bergevin, Université Laval
+% 24/11/2011
+% modifié par Jean-Yves Chouinard, Université Laval
+% 11/01/2016
+% modifié par Jean-Yves Chouinard, Université Laval
+% 04/01/2017
+%
+
+%
+% Modele d'organisation d'un projet LaTeX 
+% rapport/      dossier racine et fichier principal
+% rapport/fig   fichiers des figures
+% rapport/tex   autres fichiers .tex
+%
+
+% ** Preambule **
+%
+% Ajouter les options au besoin :
+%    - "ULlof" pour inclure la liste des figures, requis si "\begin{figure}" utilise
+%    - "ULlot" pour inclure la liste des tableaux, requis si "\begin{table}" utilise
+%
+\documentclass[12pt,ULlof,ULlot]{ULrapport}
+
+% Chargement des packages supplementaires (si absent de la classe)
+\input{/pack/ultipack}
+\usepackage[ansinew]{inputenc}
+\usepackage[autolanguage]{numprint}
+\usepackage{icomma}
+%\usepackage[options]{nom_du_package}
+
+% Definition d'une commande pour presenter des cellules multilignes dans un tableau
+\newcommand{\cellulemultiligne}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
+
+% Definition de colonnes en mode paragraphe avec alignement ajustable
+% Cette definition requiert le chargement du package "array"
+%    - alignement horizontal, parametre #1 : - \raggedright (aligne a gauche)
+%                                            - \centering (centre)
+%                                            - \raggedleft (aligne a droite)
+%    - alignement vertical, parametre #2 : - p (aligne en haut)
+%                                          - m (centre)
+%                                          - b (aligne en bas)
+%    - largeur, parametre #3 : longueur
+\newcolumntype{Z}[3]{>{#1\hspace{0pt}\arraybackslash}#2{#3}}
+
+% Definitions des parametres de la page titre
+\TitreProjet{Titre du projet}                         % Titre du projet
+\TitreRapport{Rapport de projet -- version 0}                       % Titre du rapport
+\Destinataire{Robert Bergevin, Luc Lamontagne et Simon Thibault}         % Nom(s) du destinataire
+\NumeroEquipe{99}                                     % Numero de l'equipe
+\NomEquipe{Les Gaulois}                               % Nom de l'equipe
+\TableauMembres{%                                     % Tableau des membres de l'equipe
+   111\,111\,111  & Abraracourcix    & \\\hline        % matricule & nom & \\\hline
+   222\,222\,222  & Bonemine         & \\\hline        % matricule & nom & \\\hline
+   333\,333\,333  & Falbala          & \\\hline        % matricule & nom & \\\hline
+   444\,444\,444  & Iélosubmarine    & \\\hline        % matricule & nom & \\\hline
+   555\,555\,555  & Ordralphabétix   & \\\hline        % matricule & nom & \\\hline
+   666\,666\,666  & Tragicomix       & \\\hline        % matricule & nom & \\\hline
+}
+\DateRemise{31 janvier 2019}                           % Date de remis
+
+
+% Contenu de l'historique des versions
+\HistoriqueVersions{%                        % version & date & description \\\hline
+         & 17 janvier 2006 & création du document \\\hline
+   1.0   & 22 janvier 2006 & illustration des capacités de \LaTeX: chapitre et sections, note en bas de page, référence dynamique, figure, insertion d'image, tableau, équations, références bibliographiques, liste\\\hline
+   1.1   & 14 janvier 2007 & refonte complète: introduction de la classe, page titre, exemples \LaTeX, unités SI et règles d'écriture, recommandations typographiques\\\hline
+   1.2   & 6 décembre 2007 & réorganisation des chapitres, ajout de l'historique des versions, ajouts des options ULlof et ULlot, ajout d'exemples de tableaux, corrections mineures\\\hline
+   1.3   & 14 janvier 2011 & reformatage de l'exemple, changements à l'organisation des figures\\\hline
+   1.3.1 & 24 novembre 2011 & matricules à 9 chiffres, titre du rapport\\\hline
+   1.4   & 11 janvier 2016 & mise à jour pour la session d'hiver 2016\\\hline
+	 1.4.1 &  4 janvier 2017 & mise à jour pour la session d'hiver 2017\\\hline
+}
+
+
+% Corps du document
+
+\begin{document}
+
+%   Chapitres
+
+
+%   Annexes
+
+
+\end{document}
+% Fin du document
+
