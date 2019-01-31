@@ -38,6 +38,9 @@
 % Definition d'une commande pour presenter des cellules multilignes dans un tableau
 \newcommand{\cellulemultiligne}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
 
+% Définition d'une commande pour avoir une ligne blanche entre deux paragraphes
+\newcommand{\wl}{\par \vspace{\baselineskip}}
+
 % Definition de colonnes en mode paragraphe avec alignement ajustable
 % Cette definition requiert le chargement du package "array"
 %    - alignement horizontal, parametre #1 : - \raggedright (aligne a gauche)
@@ -54,7 +57,7 @@
 \TitreRapport{Rapport de projet -- version 0}                       % Titre du rapport
 \Destinataire{Robert Bergevin, Luc Lamontagne et Simon Thibault}         % Nom(s) du destinataire
 \NumeroEquipe{8}                                      % Numero de l'equipe
-\NomEquipe{Les Sultants}                               % Nom de l'equipe
+\NomEquipe{Sultants}                               % Nom de l'equipe
 \TableauMembres{%                                     % Tableau des membres de l'equipe
    111\,233\,871  & Vincent Girard				& \\\hline        % matricule & nom & \\\hline
    906\,219\,729  & Luc Rainville				& \\\hline        % matricule & nom & \\\hline
