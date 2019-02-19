@@ -1,4 +1,5 @@
-%!TEX encoding = IsoLatin
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
 
 %
 % Classe de document "ULrapport" 
@@ -11,11 +12,11 @@
 % Historique des versions
 %
 % 2011/01/14 - version 1.1h
-% Correction du répertoire de figures: répertoire fig pour toutes figures.
-% Ne pas spécifier les extensions, laisser LaTeX choisir le format approprié.
+% Correction du rÃ©pertoire de figures: rÃ©pertoire fig pour toutes figures.
+% Ne pas spÃ©cifier les extensions, laisser LaTeX choisir le format appropriÃ©.
 % Ajout d'information sur l'encodage des fichier pour TeXshop (Mac).
-% Mise-à-jour du rapport exemple en conséquence.
-% Formatage plus léger des commentaires de la classe et des exemples
+% Mise-Ã -jour du rapport exemple en consÃ©quence.
+% Formatage plus lÃ©ger des commentaires de la classe et des exemples
 %
 % 2008/03/28 - version 1.1g
 % Repositionnement de "\addcontentsline" pour assurer un hyperlien correct (3 fois)
