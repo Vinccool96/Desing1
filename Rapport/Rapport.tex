@@ -33,6 +33,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[autolanguage]{numprint}
 \usepackage{icomma}
+\hypersetup{citecolor=red}
 % \input{./pack/ultipack}
 %\usepackage[options]{nom_du_package}
 
@@ -60,19 +61,19 @@
 \NumeroEquipe{8}                                      % Numero de l'equipe
 \NomEquipe{Sultant}                               % Nom de l'equipe
 \TableauMembres{%                                     % Tableau des membres de l'equipe
-   111\,233\,871  & Vincent Girard				& \\\hline        % matricule & nom & \\\hline
-   906\,219\,729  & Luc Rainville				& \\\hline        % matricule & nom & \\\hline
-   111\,226\,718  & Vincent Brault				& \\\hline        % matricule & nom & \\\hline
-   111\,241\,694  & Thomas Gaillard				& \\\hline        % matricule & nom & \\\hline
-   111\,240\,963  & Nicolas Cabanac Lassonde	& \\\hline        % matricule & nom & \\\hline
-   111\,236\,540  & Hassan Bourezak				& \\\hline        % matricule & nom & \\\hline
+	111\,233\,871  & Vincent Girard				& \\\hline        % matricule & nom & \\\hline
+	906\,219\,729  & Luc Rainville				& \\\hline        % matricule & nom & \\\hline
+	111\,226\,718  & Vincent Brault				& \\\hline        % matricule & nom & \\\hline
+	111\,241\,694  & Thomas Gaillard				& \\\hline        % matricule & nom & \\\hline
+	111\,240\,963  & Nicolas Cabanac Lassonde	& \\\hline        % matricule & nom & \\\hline
+	111\,236\,540  & Hassan Bourezak				& \\\hline        % matricule & nom & \\\hline
 }
 \DateRemise{31 janvier 2019}                           % Date de remis
 
 
 % Contenu de l'historique des versions
 \HistoriqueVersions{
-%	# & date & description \\\hline
+	%	# & date & description \\\hline
 	0.1 & 31 janvier 2019 & création du document \\\hline
 	1.1 & 21 février 2019 & Besoins, objectifs et cahier des charges \\\hline
 }
@@ -81,17 +82,18 @@
 % Corps du document
 
 \begin{document}
-
-%   Chapitres
-\input{tex/introduction.tex}
-\input{tex/description.tex}
-\input{tex/besoins_et_objectifs.tex}
-\input{tex/cahier_des_charges.tex}
-
-%   Annexes
-\appendix
-\input{tex/list_sig_acr}
-
+	
+	%   Chapitres
+	%
+	\input{tex/introduction.tex}
+	\input{tex/description.tex}
+	\input{tex/besoins_et_objectifs.tex}
+	\input{tex/cahier_des_charges.tex}
+	\input{tex/bibliographie.tex}
+	
+	%   Annexes
+	\appendix
+	\input{tex/list_sig_acr}
+	
 \end{document}
 % Fin du document
-

@@ -1,0 +1,16 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\subsection{Accès à distance}
+\label{s:cdc_com_accadist}
+
+Dans le but de rendre le système autonome et simplifier l’utilisation de celui-ci, une communication à distance doit être configurée.
+Cette caractéristique est cruciale étant donné de la position du capteur, qui n’est pas facilement accessible, car il est placé à une certaine profondeur dans l’eau.
+C’est pourquoi une pondération de 10~\% lui est associée. Deux éléments principaux constitueront l’évaluation de ce critère.
+Premièrement, le système doit admettre une communication rapide à distance en tout temps.
+Selon l’atteinte de ce critère, une valeur entre 0 et 1 leur sera transmise selon la réussite ou l’échec du critère.
+La valeur est déterminé par la vitesse de la connexion selon cette formule où $x$ est la vitesse de connexion en $ko/s$:
+\begin{equation} \label{eq:4.1.1}
+	\ln \left( \frac{x-384}{6816} \right) +1,\qquad x \in [384,\,7200]
+\end{equation}
