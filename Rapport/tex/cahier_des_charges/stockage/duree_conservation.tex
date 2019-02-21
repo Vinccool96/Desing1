@@ -8,7 +8,8 @@
 Le client exige que le système soit en mesure d’archiver les fichiers pour une période à court et long terme. La période la plus courte est de 14 jours alors que la plus longue est plutôt de 2 ans. L’évaluation de ce critère se fait en deux volets, chaque volet a une valeur de 1,5~\%, donc si les deux critères sont parfaitement réussis, un score de 1 est attribué. 
 
 \begin{table}[htp]
-	\label{t:cdc_stock_duree}
+	\caption{Barème pour la conservation des données}
+	\label{tab:cdc_stock_duree}
 	\centering
 	\begin{tabular}{|l|l|}
 		\hline
@@ -16,7 +17,7 @@ Le client exige que le système soit en mesure d’archiver les fichiers pour un
 		Données locales       & \begin{tabular}[c]{@{}l@{}}\textless 14 jour : 0\%\\ $\geq$ 14 jours: 1,5\%\end{tabular} \\ \hline
 		Données dans le nuage & \begin{tabular}[c]{@{}l@{}}\textless 2 ans : 0\%\\ $\geq$ 2ans: 1,5\%\end{tabular}       \\ \hline
 	\end{tabular}
-	\caption{Barème pour la conservation des données}
 \end{table}
 
 La pondération pour ce critère est de 3~\%, car les données doivent être conservées sur deux périodes distinctes.
+\bigskip
