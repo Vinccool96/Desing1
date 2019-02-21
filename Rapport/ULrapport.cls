@@ -245,6 +245,7 @@
 \AtBeginDocument{%
    \renewcommand{\figurename}{\textsc{Figure}}%
    \renewcommand{\tablename}{\textsc{Tableau}}%
+   \renewcommand{\frenchtablename}{\textsc{Tableau}}%
 }
 
 % Generation de la page titre

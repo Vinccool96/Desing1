@@ -1,0 +1,15 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\subsection{Autonomie}
+\label{s:cdc_aut_autnmi}
+
+Afin de pouvoir être actif 7 jours sur 7 et 24 heures sur 24 durant 14 jours, le système possède une batterie adaptée pour alimenter chacun des composants.
+La masse de la batterie ne doit pas dépasser 20~\% du poids final du système, soit au maximum 1~kg.
+La batterie devra également couvrir une durée d’alimentation supérieure à la durée maximale de prise de données, soit plus de 14 jours.
+\wl
+La formule évaluant ce critère est la suivante, ou $h$ est le nombre d’heures d’autonomie de la batterie:
+\begin{equation} \label{eq:cdc_aut_autnmi}
+	2\left(\frac{h-336}{336}\right),\quad h \in [336\,504]
+\end{equation}

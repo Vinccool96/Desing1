@@ -1,0 +1,13 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\subsection{Capteur}
+\label{s:cdc_pdd_capt}
+
+Le client désire pouvoir récolter des données sur des spécimens d’au moins six centimètres.
+Ainsi, il faut que la distance à laquelle la photo est prise résulte en une image d’au moins 16 pixels sur le capteur, ceux-ci étant le nombre maximal de pixels afin de pouvoir identifier quelque chose sur une photo.
+Pour se faire, il faut que notre capteur produise une lumière suffisante à des distances maximales et minimales du volume d’analyse.
+Il faut donc tenir compte de la relation inverse de la luminosité en fonction de la distance de la source.
+Ce critère est important, car c’est celui qui assure la prise de photo qui est au cœur du projet. Ainsi on pondère ce critère à 5~\%.
+Pour s’assurer du respect maximum de ce critère, la valeur de celui-ci est divisée en trois sous critères valant chacun 0,3 point, puis une fois que les valeurs seront additionnées, cela donnera un résultat sur 1.

@@ -1,0 +1,30 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\subsection{Contrainte physique}
+\label{s:cdc_pdd_cntphy}
+
+Le client n’a pas indiqué de proportions claires à respecter pour la taille de notre système, celui-ci devra tout de même être le plus compact possible tout en assurant qu’une analyse sur un volume d’au moins un mètre cube d’eau soit possible.
+Le système doit tolérer des températures entre 4~°C et 25~°C.
+Afin d’éviter les problèmes de surchauffe, le produit final doit aussi compter un système de refroidissement automatique afin que la température intérieure soit au plus bas 10~°C en dessous de la température de l’eau et au plus haut cinq~°C au-dessus.
+Le client demande aussi que le système soit assez résistant pour fonctionner à 15,25~m sous l’eau.
+De plus, la limite de la masse de la partie submergée est fixée à 5 kilogrammes.
+Un choix judicieux de matériaux légers, mais robustes est donc de mise.
+Nous pondérons ce critère à 5~\%. Pour s’assurer de bien respecter ce critère, un tableau est fourni:
+
+\begin{table}[htp]
+	\caption{Barème de contraintes physiques}
+	\label{tab:cdc_pdd_cntphy}
+	\centering
+	\begin{tabular}{|l|c|c|c|}
+		\hline
+		\multirow{2}{*}{\textbf{Partie évaluée}} & \multicolumn{3}{c|}{\textbf{Condition pour avoir la note de}} \\\cline{2-4}
+		 & 0,2 & 0,15 & 0 \\\hline
+		Volume analysé $V$ (m\textsuperscript{3}) & $V \ge 1$ & $V=1$ & $V<1$  \\\hline
+		Température supportée $T$ (°C) & $4 \le T \le 25$  & non attribuée & 0 \\\hline
+		Température par rapport à l'eau $\Delta T$ (°C) & $-10 \le \Delta T \le 5$ & non attribuée & 0 \\\hline
+		Profondeur maximale $p$ (m) & $p \ge 15,25$ & $p=15,25$ & $p<15,25$    \\\hline
+		Masse submergée $m$ (kg) & $m \ge 5$ & & $m < 5$  \\\hline
+	\end{tabular}
+\end{table}
