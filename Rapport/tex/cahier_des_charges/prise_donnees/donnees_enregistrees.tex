@@ -5,8 +5,42 @@
 \subsection{Données enregistrées}
 \label{s:cdc_pdd_donnees_enre}
 
-Chaque acquisition doit contenir des données spécifiques. Celle-ci doit au minimum contenir les données suivante : image originale, vignette 100 x 100 pixel (8 bits), date, heure,  température du capteur, température de l’eau et identification. L’absence d’une de ces données invalide le concept. La pondération varie en fonction de la qualité de chacune de ces données. Le tableau \ref{t:tab_pdd_donnees_enr} permet l’évaluation de ce critère.
+Chaque acquisition doit contenir des données spécifiques.
+Celle-ci doit au minimum contenir les données suivante : image originale, vignette 100 x 100 pixel (8 bits), date, heure, température du capteur, température de l’eau et identification.
+L’absence d’une de ces données invalide le concept.
+La pondération varie en fonction de la qualité de chacune de ces données.
 
-\input{tex/cahier_des_charges/prise_donnees/tab_pdd_donnees_enr.tex}
+
+\begin{table}[htp]
+	\caption{Barème des données enregistrées}
+	\label{tab:cdc_pdd_donnees_enre}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		Donnée & Pondération & Max. \\\hline
+		\multirow{3}{*}{Image originale} & Absente : 0\% & \multirow{3}{*}{1\%} \\
+		& Forte compression : 0,5\% & \\
+		& Légère compression : 1,0\% & \\\hline
+		\multirow{4}{*}{Vignette 100x100} & Absente : 0 & \multirow{4}{*}{1\%} \\
+		& Couleur 8 bits : 0,33\% & \\
+		& Couleur 16 bits : 0,66\% & \\
+		& Couleur 24 bits : 1,0\% & \\\hline
+		\multirow{3}{*}{Précision date et heure} & Absente : 0 & \multirow{3}{*}{0,5\%} \\
+		& Minute : 0,25\% & \\
+		& Seconde : 0,5\% & \\\hline
+		\multirow{4}{*}{Précision température système} & Absente : 0\% & \multirow{4}{*}{0,5\%} \\
+		& 1°C : 0,16\% & \\
+		& 0,1°C : 0,33\% & \\
+		& 0,01°C : 0,5\% & \\\hline
+		Précision température de l’eau & Ibid. & 0,5\% \\\hline
+		\multirow{2}{*}{Identification} & Absente : 0\% & \multirow{2}{*}{0,5\%} \\
+		& Présente : 0,5\% & \\\hline
+		\multirow{2}{*}{Données GPS} & Absente : 0\% & \multirow{2}{*}{0,5\%} \\
+		& Présente : 0,5\% & \\\hline
+		\multirow{3}{*}{Informations de configuration} & Absentes : 0 & \multirow{3}{*}{0,5\%} \\
+		& Minimes : 0,25\% & \\
+		& Détaillées : 0,5\% & \\\hline
+	\end{tabular}
+\end{table}
 
 La pondération de ce critère est de 5~\%.
