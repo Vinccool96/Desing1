@@ -1,0 +1,15 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\subsection{Stockage dans le nuage}
+\label{s:cdc_stock_nuage}
+
+L’ensemble des images capturées par la caméra seront par la suite archivées dans un nuage où ces images seront conservées pour une durée de 2 ans avant d’être ensuite supprimées. Considérant la petite taille des photos, un nuage d’une centaine de GO est amplement suffisant et il est pratiquement impossible de saturer le nuage en raison de la taille des fichiers sauvegardés. Le barème pour ce critère fonctionne de la même manière que pour le stockage local, sauf que la mémoire est de 1 To. On obtient ainsi l’équation \ref{eq:cdc_stock_nuage}. Donc, on remarque que un pointage de 1 est attribué pour un stockage de 1 To dans le nuage et le pointage de 0 pour un stockage nul.
+
+\begin{equation} \label{eq:cdc_stock_nuage}
+x, \qquad x \in [0,\,1]
+\end{equation}
+
+
+La pondération pour ce critère est de 4~\%, car une quantité considérablement plus grande de photos doivent être stockées comparativement à la mémoire locale.

@@ -1,0 +1,14 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\subsection{Stockage local}
+\label{s:cdc_stock_local}
+
+La portion du système qui sera submergée au fond du cours d’eau doit posséder une mémoire locale où les images prises par le capteur seront emmagasinées jusqu’à ce que ces fichiers ne soient définitivement transférés dans la banque à long terme (voir le critère suivant). Puisque la quantité à stocker est minime, il est important que la mémoire ne soit pas énergivore et que l’espace qu’elle occupe soit limitée. Considérant l'image originale et des vignettes de 100 par 100 pixels, la quantité de photos prises par le capteur à quelques centaines au courant de la période de 14 jours, une simple carte SD de 64 Go offre un coussin confortable. L’évaluation de ce critère se fait à l’aide de l'équation \ref{eq:cdc_stock_local} où x représente la mémoire local en Go. 
+
+\begin{equation} \label{eq:cdc_stock_local}
+\frac{x}{32}, \qquad x \in [0,\,32]
+\end{equation}
+
+Une pondération de 3~\% est octroyée à ce critère puisque de nombreuses solutions simples, accessibles et peu coûteuses existent. 
