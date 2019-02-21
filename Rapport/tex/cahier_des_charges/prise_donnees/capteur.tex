@@ -11,3 +11,21 @@ Pour se faire, il faut que notre capteur produise une lumière suffisante à des
 Il faut donc tenir compte de la relation inverse de la luminosité en fonction de la distance de la source.
 Ce critère est important, car c’est celui qui assure la prise de photo qui est au cœur du projet. Ainsi on pondère ce critère à 5~\%.
 Pour s’assurer du respect maximum de ce critère, la valeur de celui-ci est divisée en trois sous critères valant chacun 0,3 point, puis une fois que les valeurs seront additionnées, cela donnera un résultat sur 1.
+
+\begin{itemize}
+	\item Pour la taille du poisson $l$ (cm) : $\left(\frac{5}{l}\right) * 0,3$, en tenant compte que 5 centimètres et moins donne un résultat de 0,3
+	
+	\item Pour la taille de l’image:
+	\begin{itemize}
+		\item si notre image est de moins de 16 pixels, cela vaut 0
+		\item si notre image est de 16 pixels, cela vaut 0,2
+		\item si notre image est de 21 pixels, cela vaut 0,3
+	\end{itemize}
+	\item Pour l’éclairage:
+	\begin{itemize}
+		\item image inutilisable vaut 0
+		\item image surexposé vaut 0,1
+		\item image sous exposé vaut 0,1
+		\item image à exposition optimal vaut 0,3
+	\end{itemize}
+\end{itemize}
