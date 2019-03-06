@@ -103,7 +103,7 @@
 \RequirePackage{rotating}
 % \RequirePackage{mathabx}         % pour \second (peut etre remplace par "\prime\prime")
 % \RequirePackage{color}
-\RequirePackage[hyphens]{url}
+\RequirePackage{url}
 \RequirePackage{hyperref}
 
 %--------------------------------------------------------------------------------------
