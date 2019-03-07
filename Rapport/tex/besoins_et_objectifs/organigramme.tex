@@ -2,9 +2,67 @@
 % !TeX spellcheck = fr_FR
 
 
+\definecolor{couleurttr}{HTML}{3366FF}
+\definecolor{couleurobj}{HTML}{33CCCC}
+\definecolor{couleurspf}{HTML}{A7E9E9}
+
 \begin{figure}[htp]
 	\centering
+	\tikzset{
+		basic/.style = {draw, rounded corners=2pt, thick, text width=5em, font=\fontsize{8}{9}\selectfont, align=flush center},
+		titre/.style = {basic, fill=couleurttr, text width=12em, font=\fontsize{12}{9}\selectfont},
+		objectif/.style = {basic, fill=couleurobj},
+		specification/.style = {basic, fill=couleurspf, thin, align=flush left}
+	}
+	\begin{forest}
+		for tree={
+			grow=south,
+			forked edge,    % for forked edge
+			s sep = 8mm,    % "sibling" distance
+			l sep = 6mm,    % "level" distance
+			fork sep = 2.5mm,  % distance from parent to branching point
+			tier/.option=level, % for aligning nodes at top
+			edge = {-Straight Barb, semithick},
+			if level = 0{titre}{},
+			if level = 1{objectif, l sep=2mm}{},
+			if level>= 2{specification,
+				l sep=2mm,
+				child anchor=west,
+				edge path={\noexpand\path[\forestoption{edge}] (!u.west) -- ++ (0,-3mm) -| (.child anchor);}}{},
+		}
+		[Projet Fish \& Chips
+			[Faciliter la communication à distance
+				[Faciliter l'accès à distance
+				[Fournir un accès à distance efficace]]
+			]
+			[Maximiser la sécurité
+				[Chiffrer les communications
+				[Fournir deux niveaux d'alarmes
+				[Limiter l'accès aux personnes autorisées]]]
+			]
+			[Optimiser la prise de données
+				[Accumuler des données de qualité
+				[Fournir un capteur qui facilite l'identification
+				[Identifier un grand nombre d'espèces
+				[Maximiser l'exactitude de l'identification
+				[Respecter les exigences physiques du capteur]]]]]
+			]
+			[Optimiser le stockage
+				[Archiver les données de manière accessible
+				[Inclure un stockage fiable et suffisant au capteur]]
+			]
+			[Optimiser l’automatisation
+				[Fournir un système configurable
+				[Offrir une autonomie longue durée
+				[Permettre le redémarrage automatique]]]
+			]
+			[Respecter le coût global et l’échéancier
+				[Produire un concept à temps
+				[Réduire les coûts de main d'œuvre
+				[Réduire les coûts du matériel]]]
+			]
+		]
+	\end{forest}
 	\caption{Organigramme des objectifs du projet Fish \& Chips}
 	\label{f:beo_organig}
-	\includegraphics[width=\textwidth]{beo}
 \end{figure}
