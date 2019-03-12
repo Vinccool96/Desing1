@@ -85,11 +85,12 @@
 					second line={(mat-1-4.north west)--($(mat-1-4.north west)+(45:5)$)});
 				}
 				\begin{scope}[shift={(mat-1-4.north west)},x={(45:{sqrt(1/2)*1.6em})},y={(-45:{sqrt(1/2)*1.6em})}]
-				\begin{scope}[shift={(0.6,-0.5)}]
-				\foreach \Coord in {(1,1),(2,1),(3,1),(7,1),%pas officiels
-					(5,2),(4,3),(4,4),(5,5),(7,7)}{\node at \Coord {\checkmark};} %TODO la grille croisée
-			\end{scope} 
-			\end{scope}
+					\begin{scope}[shift={(0.6,-0.5)}]
+						\foreach \CoordCM in {(1,1),(2,1),(3,1),(7,1),%pas officiels
+						(5,2),(4,3),(4,4),(5,5),(7,7)}
+							{\node at \CoordCM {\Checkmark};} %TODO la grille croisée
+					\end{scope} 
+				\end{scope}
 		\end{tikzpicture}
 	\end{tabular}
 \end{table}
