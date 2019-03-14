@@ -10,7 +10,7 @@
 	\centering
 	\tikzset{
 		basic/.style = {draw, rounded corners=2pt, thick, text width=5em, font=\fontsize{8}{9}\selectfont, align=flush center},
-		titre/.style = {basic, fill=couleurttr, text width=12em, font=\fontsize{12}{9}\selectfont},
+		titre/.style = {basic, fill=couleurttr, text width=24em, font=\fontsize{24}{9}\selectfont},
 		objectif/.style = {basic, fill=couleurobj},
 		specification/.style = {basic, fill=couleurspf, thin, align=flush left}
 	}
@@ -30,15 +30,14 @@
 				child anchor=west,
 				edge path={\noexpand\path[\forestoption{edge}] (!u.west) -- ++ (0,-3mm) -| (.child anchor);}}{},
 		}
-		[Projet Fish \& Chips
+		[\textbf{Projet Fish \& Chips}
 			[Faciliter la communication à distance
 				[Faciliter l'accès à distance
-				[Fournir un accès à distance efficace]]
+				[Fournir une vitesse de connexion rapide]]
 			]
 			[Maximiser la sécurité
-				[Chiffrer les communications
 				[Fournir deux niveaux d'alarmes
-				[Limiter l'accès aux personnes autorisées]]]
+				[Limiter l'accès aux personnes autorisées]]
 			]
 			[Optimiser la prise de données
 				[Accumuler des données de qualité
