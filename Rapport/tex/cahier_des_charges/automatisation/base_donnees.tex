@@ -7,6 +7,11 @@
 
 Afin d’être parfaitement autonome, notre système devra posséder une base de données complète des espèces de poissons vivants au Canada.
 Le but est que notre capteur puisse identifier le poisson sans générer d’erreur sur la reconnaissance de l’espèce.
-Ce critère est évalué de manière qualitative entre 0 et 1.
-La note de 0 représente une base de données incomplète et 1, une base de données complète et à jour.
+Il existe 428 espèces aquatiques au Canada \cite{peches_oceans_canada_liste_poissons}
+Ce critère est évalué de manière quantitative entre 0 et 1 selon la formule \ref{eq:cdc_aut_basedonn}, où $n$ est le nombre d'espèces dans la base de donnée.
+
+\begin{equation}
+	\label{eq:cdc_aut_basedonn}
+	\log_{478}(n-3),\quad n \in [5,\,428]
+\end{equation}
 La pondération est de 3~\%.

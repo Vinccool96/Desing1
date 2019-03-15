@@ -11,6 +11,7 @@ C’est pourquoi une pondération de 10~\% lui est associée. Deux éléments pr
 Premièrement, le système doit admettre une communication rapide à distance en tout temps.
 Selon l’atteinte de ce critère, une valeur entre 0 et 1 leur sera transmise selon la réussite ou l’échec du critère.
 La valeur est déterminé par la vitesse de la connexion selon cette formule où $x$ est la vitesse de connexion en $ko/s$:
-\begin{equation} \label{eq:cdc_com_accadist}
+\begin{equation}
+	\label{eq:cdc_com_accadist}
 	\ln \left( \frac{x-384}{6816} \right) +1,\qquad x \in [384,\,7200]
 \end{equation}

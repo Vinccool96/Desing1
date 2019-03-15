@@ -8,15 +8,12 @@
 La firme d’ingénieurs Sultan n’a pas reçu de date de remise du prototype précise.
 Par contre, dans l’optique de montrer le professionnalisme de notre firme, le produit final sera livré au client dans les plus brefs délais, sans pour autant compromettre la qualité du projet.
 Pour permettre une évaluation fluide de ce critère, la date du 18 avril 2019 représente l’objectif pour la remise du produit.
+Le barème est calculé selon la formule \ref{eq:cdc_cee_rspech}, où $d$ est la date de remise par rapport au 18 avril 2019.
 
-\begin{table}[htp]
-	\caption{Barème du respect de l’échéance}
-	\label{tab:cdc_cee_rspech}
-	\centering
-	\begin{tabular}{|l|c|}
-		\hline
-		Pondération & Échéance \\\hline
-		0 & Toute dates suivant le 18 avril 2019 \\\hline
-		1 & 18-avr-19 \\\hline
-	\end{tabular}
-\end{table}
+\begin{equation}
+	\label{eq:cdc_cee_rspech}
+	\left\{\begin{matrix}
+		5, & d\le0\\ 
+		-d+5, & d>0
+	\end{matrix}\right.
+\end{equation}
