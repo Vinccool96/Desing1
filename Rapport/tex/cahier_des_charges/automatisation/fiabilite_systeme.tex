@@ -8,7 +8,8 @@
 Le système doit être fiable en cas d’arrêt imprévu.
 Le microprogramme interne doit pouvoir redémarrer le système automatiquement s’il s’arrête subitement durant la phase de prise de données.
 Le système inclut un générateur d’alarme indépendant qui enverra une alarme en cas d’échec de redémarrage.
-Il s’agit ici d’un cas binaire entre notre système est fiable ou non.
-Ce critère est alors évalué par 0 ou 1.
-Le 1 représentant un système fiable capable de communiquer en toutes circonstances.
+Ce critère est alors obtenu grâce à la comparaison entre la durée de fonctionnement et la durée de déploiement, soit la formule \ref{eq:cdc_aut_fiabsys}, où $t_f$ est la durée de fonctionnement et $t_d$, celle de déploiement.
+\begin{equation} \label{eq:cdc_aut_fiabsys}
+	3\left(\frac{t_f}{t_d}\right)
+\end{equation}
 Ainsi ce critère sera évalué avec une pondération de 3~\%.

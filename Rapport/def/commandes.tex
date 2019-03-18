@@ -1,0 +1,32 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+% Définition d'une commande pour avoir une ligne blanche entre deux paragraphes
+\newcommand{\wl}{\par \vspace{\baselineskip}}
+
+% Définitions de commandes pour faire des liens
+\newcommand{\multiliens}[3]{
+	\begin{scope}[x=1em,y=1em]
+		\newdimen\xend
+		\newdimen\yend  
+		\path (#2.west);
+		\pgfgetlastxy{\xend}{\yend}
+		\foreach \i in {#1} {
+			\newdimen\xstart
+			\newdimen\ystart 
+			\path (\i.east);
+			\pgfgetlastxy{\xstart}{\ystart}
+			\coordinate (1) at ({\xend-#3 em},\ystart);
+			\coordinate (2) at ({\xend-#3 em},\yend);
+			\ifdim\ystart=\yend
+			\draw[->] (\i.east)--(#2.west);
+			\else
+			\draw[->,rounded corners] (\i.east)--(1)--(2)--(#2.west);
+			\fi
+		}
+	\end{scope}
+}
+\newcommand{\lienhorz}[2]{\draw[->] (#1.east) -- (#2.west);}
+\newcommand{\lienvtht}[2]{\draw[->] (#1.north) -- (#2.south);}
+\newcommand{\lienvtbs}[2]{\draw[->] (#1.south) -- (#2.north);}

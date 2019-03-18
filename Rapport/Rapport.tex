@@ -54,12 +54,6 @@
 % \input{./pack/ultipack}
 %\usepackage[options]{nom_du_package}
 
-% Definition d'une commande pour presenter des cellules multilignes dans un tableau
-\newcommand{\cellulemultiligne}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
-
-% Définition d'une commande pour avoir une ligne blanche entre deux paragraphes
-\newcommand{\wl}{\par \vspace{\baselineskip}}
-
 % Definition de colonnes en mode paragraphe avec alignement ajustable
 % Cette definition requiert le chargement du package "array"
 %    - alignement horizontal, parametre #1 : - \raggedright (aligne a gauche)
@@ -73,7 +67,7 @@
 
 % Definitions des parametres de la page titre
 \TitreProjet{Projet Fish \& Chips}                         % Titre du projet
-\TitreRapport{Rapport de projet -- version 0}                       % Titre du rapport
+\TitreRapport{Rapport de projet -- version 2}                       % Titre du rapport
 \Destinataire{Robert Bergevin, Luc Lamontagne et Simon Thibault}         % Nom(s) du destinataire
 \NumeroEquipe{8}                                      % Numero de l'equipe
 \NomEquipe{Sultan}                               % Nom de l'equipe
@@ -99,6 +93,9 @@
 % Corps du document
 
 \begin{document}
+	
+	% Définitions
+	\input{def/commandes.tex}
 	
 	%   Chapitres
 	%

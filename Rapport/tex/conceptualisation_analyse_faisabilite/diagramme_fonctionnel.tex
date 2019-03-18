@@ -8,24 +8,18 @@
 \definecolor{couleurtext}{HTML}{000000}
 \definecolor{couleurbackextr}{HTML}{DDB3FF}
 
-\newcommand{\multiliens}[2]{\foreach \noeud in {#1} {\draw[<-,rounded corners] (#2.west) -| ++(-1em,0em) |- (\noeud.east);}}
-\newcommand{\lienhorz}[2]{\draw[->] (#1.east) -- (#2.west);}
-\newcommand{\lienvtht}[2]{\draw[->] (#1.north) -- (#2.south);}
-\newcommand{\lienvtbs}[2]{\draw[->] (#1.south) -- (#2.north);}
-
-
 \begin{figure}[htp]
 	\centering
 	\tikzset{
-		basic/.style={draw, rounded corners=2pt, thick, text width=6em, align=flush center, text=couleurtext, node distance=2em},
+		basic/.style={draw, rounded corners=2pt, thick, text width=6em, align=flush center, text=couleurtext},
 		intrant/.style={basic, fill=couleurbackintr, text=couleurtextintr},
 		fonction/.style={basic, fill=couleurbackfonc},
 		extrant/.style={basic, fill=couleurbackextr}
 	}
 	\begin{tikzpicture}[]
-		\fontsize{10}{9} \selectfont
+		\fontsize{12}{9} \selectfont
 		% intrants
-		\matrix[row sep=2em, column sep=2em] {
+		\matrix[row sep=1em, column sep=2em] {
 			% 1re ligne
 			% TODO changer nom
 			\node[intrant](forcutil){Force utilisée}; & \node[fonction](instcapt){Installer capteur sous l'eau}; & & & \node[extrant](captinst){Capteur installé}; \\
@@ -66,9 +60,9 @@
 		\lienvtbs{accudonn}{idenpois}
 		\lienvtbs{idenpois}{archdonn}
 		
-		\multiliens{genralrm,archdonn}{alarme}
-		\multiliens{archdonn,accedonn}{donnarch}
-		\multiliens{photo,alimcapt,captteau,capttcpt,confcapt}{accudonn}
+		\multiliens{genralrm,archdonn}{alarme}{1.5}
+		\multiliens{archdonn,accedonn}{donnarch}{0.5}
+		\multiliens{photo,alimcapt,captteau,capttcpt,confcapt}{accudonn}{1}
 	\end{tikzpicture}
 	\caption{Diagramme fonctionnel}
 	\label{f:caf_diag_fonc}
