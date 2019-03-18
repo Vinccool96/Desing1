@@ -8,7 +8,7 @@
 \definecolor{couleurtext}{HTML}{000000}
 \definecolor{couleurbackextr}{HTML}{DDB3FF}
 
-\newcommand{\multiliens}[2]{\foreach \noeud in {#1} {\draw[<-] (#2.west) -| ++(-1em,0em) |- (\noeud.east);}}
+\newcommand{\multiliens}[2]{\foreach \noeud in {#1} {\draw[<-,rounded corners] (#2.west) -| ++(-1em,0em) |- (\noeud.east);}}
 \newcommand{\lienhorz}[2]{\draw[->] (#1.east) -- (#2.west);}
 \newcommand{\lienvtht}[2]{\draw[->] (#1.north) -- (#2.south);}
 \newcommand{\lienvtbs}[2]{\draw[->] (#1.south) -- (#2.north);}
@@ -17,7 +17,7 @@
 \begin{figure}[htp]
 	\centering
 	\tikzset{
-		basic/.style={draw, rounded corners=2pt, thick, text width=8em, align=flush center, text=couleurtext, node distance=2em},
+		basic/.style={draw, rounded corners=2pt, thick, text width=6em, align=flush center, text=couleurtext, node distance=2em},
 		intrant/.style={basic, fill=couleurbackintr, text=couleurtextintr},
 		fonction/.style={basic, fill=couleurbackfonc},
 		extrant/.style={basic, fill=couleurbackextr}
@@ -55,10 +55,20 @@
 		\lienhorz{confvolm}{confcapt}
 		\lienhorz{entrutil}{authutil}
 		
+		\lienhorz{detecteu}{photo}
 		\lienhorz{detcdefa}{genralrm}
 		\lienhorz{instcapt}{captinst}
 		
+		\lienhorz{authutil}{accedonn}
+		
 		\lienvtht{authutil}{confcapt}
+		\lienvtbs{genralrm}{accudonn}
+		\lienvtbs{accudonn}{idenpois}
+		\lienvtbs{idenpois}{archdonn}
+		
+		\multiliens{genralrm,archdonn}{alarme}
+		\multiliens{archdonn,accedonn}{donnarch}
+		\multiliens{photo,alimcapt,captteau,capttcpt,confcapt}{accudonn}
 	\end{tikzpicture}
 	\caption{Diagramme fonctionnel}
 	\label{f:caf_diag_fonc}
