@@ -9,20 +9,20 @@
 \newcommand{\multiliens}[3]{
 	\begin{scope}[x=1em,y=1em]
 		\newdimen\xend
-		\newdimen\yend  
+		\newdimen\yend
 		\path (#2.west);
 		\pgfgetlastxy{\xend}{\yend}
 		\foreach \i in {#1} {
 			\newdimen\xstart
-			\newdimen\ystart 
+			\newdimen\ystart
 			\path (\i.east);
 			\pgfgetlastxy{\xstart}{\ystart}
-			\coordinate (1) at ({\xend-#3 em},\ystart);
+			\coordinate (1) at ({\xend-#3 em)},\ystart);
 			\coordinate (2) at ({\xend-#3 em},\yend);
 			\ifdim\ystart=\yend
-			\draw[->] (\i.east)--(#2.west);
+				\draw[->] (\i.east)--(#2.west);
 			\else
-			\draw[->,rounded corners] (\i.east)--(1)--(2)--(#2.west);
+				\draw[->,rounded corners] (\i.east)--(1)--(2)--(#2.west);
 			\fi
 		}
 	\end{scope}
@@ -30,3 +30,77 @@
 \newcommand{\lienhorz}[2]{\draw[->] (#1.east) -- (#2.west);}
 \newcommand{\lienvtht}[2]{\draw[->] (#1.north) -- (#2.south);}
 \newcommand{\lienvtbs}[2]{\draw[->] (#1.south) -- (#2.north);}
+\newcommand{\listebcs}[4]{
+	\tikzset{
+		barycentric setup/.code={\foreach \X [count=\Y] in {#1}
+			{\ifnum\Y=1
+				\xdef\baryarg{\X=1}
+				\else
+				\xdef\baryarg{\baryarg,\X=1}
+				\fi}},
+		barycentric list/.style={barycentric setup={#1},insert path={%
+				(barycentric cs:\baryarg)}}
+	}
+	\path[barycentric list={#1}] node[anchor=center,align=flush center,#2] (#3) {#4};
+}
+
+\newcommand{\liensparfaits}[4]{%
+	\begin{scope}[x=1em,y=1em]
+		\listebcs{#2}{}{bcright}{}
+		\newdimen\xright
+		\newdimen\ybc
+		\newdimen\dump
+		\path(bcright);
+		\pgfgetlastxy{\dump}{\ybc}
+		\getpremier{#2}
+		\path(\premier.west)--++(-#3em,0em);
+		\newdimen\xmidright
+		\pgfgetlastxy{\xmidright}{\dump}
+		\coordinate (midright) at (\xmidright,\ybc);
+		\path(midright)--++(-#4em,0em);
+		\newdimen\xmidleft
+		\pgfgetlastxy{\xmidleft}{\dump}
+		\coordinate (midleft) at (\xmidleft,\ybc);
+		\foreach \i in {#1} {
+			\foreach \j in {#2}{
+				\newdimen\ystart
+				\path (\i.east);
+				\pgfgetlastxy{\dump}{\ystart}
+				\newdimen\xmidl
+				\newdimen\xmidr
+				\path (midleft);
+				\pgfgetlastxy{\xmidl}{\dump}
+				\path (midright);
+				\pgfgetlastxy{\xmidr}{\dump}
+				\newdimen\yend
+				\path (\j.west);
+				\pgfgetlastxy{\dump}{\yend}
+				\coordinate (cl) at (\xmidl,\ystart);
+				\coordinate (cr) at (\xmidr,\yend);
+				\ifdim\ystart=\ybc\relax%
+				\ifdim\ybc=\yend\relax%
+				\draw[->] (\i.east)--(\j.west);%
+				\else\relax%
+				\draw[->,rounded corners] (\i.east)--(midright)--(cr)--(\j.west);%
+				\fi\relax%
+				\else\relax%
+				\ifdim\ybc=\yend\relax%
+				\draw[->,rounded corners] (\i.east)--(cl)--(midleft)--(\j.west);%
+				\else\relax%
+				\draw[->,rounded corners] (\i.east)--(cl)--(midleft)--(midright)--(cr)--(\j.west);%
+				\fi\relax%
+				\fi\relax%
+			}
+		}
+	\end{scope}
+}
+
+%manipulation string (pour liste)
+\newcommand{\getpremier}[1]{
+	\StrCount{#1}{,}[\nbrelems]
+	\ifnum\nbrelems>0\relax
+		\StrBefore[1]{#1}{,}[\premier]
+	\else
+		#1
+	\fi
+}

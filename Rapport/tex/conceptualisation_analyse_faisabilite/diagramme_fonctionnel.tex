@@ -11,7 +11,7 @@
 \begin{figure}[htp]
 	\centering
 	\tikzset{
-		basic/.style={draw, rounded corners=2pt, thick, text width=6em, align=flush center, text=couleurtext},
+		basic/.style={draw, rounded corners=2pt, thick, text width=5.5em, align=flush center, text=couleurtext},
 		intrant/.style={basic, fill=couleurbackintr, text=couleurtextintr},
 		fonction/.style={basic, fill=couleurbackfonc},
 		extrant/.style={basic, fill=couleurbackextr}
@@ -21,22 +21,21 @@
 		% intrants
 		\matrix[row sep=1em, column sep=2em] {
 			% 1re ligne
-			% TODO changer nom
-			\node[intrant](forcutil){Force utilisée}; & \node[fonction](instcapt){Installer capteur sous l'eau}; & & & \node[extrant](captinst){Capteur installé}; \\
+			\node[intrant](forcutil){Milieu aquatique}; & \node[fonction](instcapt){Isoler et protéger le capteur}; & & & \node[extrant](captinst){Capteur insolé et protégé}; \\
 			% 2me ligne
 			\node[intrant](defailla){Défaillance}; & \node[fonction](detcdefa){Détecter défaillance}; & & \node[fonction](genralrm){Générer alarme}; & \node[extrant](alarme){Alarme}; \\
 			% 3me ligne
-			\node[intrant](poissons){Poissons}; & \node[fonction](detecteu){Détecteur}; & \node[fonction](photo){Photo}; & \node[fonction](accudonn){Accumuler données}; & \\
+			\node[intrant](poissons){Poissons}; & \node[fonction](detecteu){Détecteur}; & \node[fonction](photo){Photo}; & \node[fonction](accudonn){Accumuler données}; & \node[extrant](imagorgi){Image originale}; \\
 			% 4me ligne
-			\node[intrant](elecbatt){Électicité batterie}; & \node[fonction](alimcapt){Alimenter capteur}; & & \node[fonction](idenpois){Identifier poisson}; & \\
+			\node[intrant](elecbatt){Électicité batterie}; & \node[fonction](alimcapt){Alimenter capteur}; & & \node[fonction](idenpois){Identifier poisson}; & \node[extrant](vignette){Vignette}; \\
 			% 5me ligne
-			\node[intrant](tempreau){Température de l'eau}; & \node[fonction](captteau){Capteur température eau}; & & \node[fonction](archdonn){Archiver donnéees}; & \node[extrant](donnarch){Données archivées}; \\
+			\node[intrant](tempreau){Température de l'eau}; & \node[fonction](captteau){Capteur température eau}; & & \node[fonction](archdonn){Archiver donnéees}; & \node[extrant](tmpeauex){Température de l'eau}; \\
 			% 6me ligne
-			\node[intrant](tempintr){Température interne}; & \node[fonction](capttcpt){Capteur température interne}; & & & \\
+			\node[intrant](tempintr){Température interne}; & \node[fonction](capttcpt){Capteur température interne}; & & & \node[extrant](tmpintex){Température du système}; \\
 			% 7me ligne
-			\node[intrant](confvolm){Configuration volume}; & \node[fonction](confcapt){Configurer capteur}; & & & \\
+			\node[intrant](confvolm){Configuration volume}; & \node[fonction](confcapt){Configurer capteur}; & & & \node[extrant](dateheur){Date et heure}; \\
 			% 8me ligne
-			\node[intrant](entrutil){Entrées utilisateurs}; & \node[fonction](authutil){Authentifier utilisateur}; & \node[fonction](accedonn){Accéder aux données}; & & \\
+			\node[intrant](entrutil){Entrées utilisateurs}; & \node[fonction](authutil){Authentifier utilisateur}; & \node[fonction](accedonn){Accéder aux données}; & & \node[extrant](idntpois){Identification du poisson}; \\
 		};
 		
 		% Liens
@@ -61,8 +60,8 @@
 		\lienvtbs{idenpois}{archdonn}
 		
 		\multiliens{genralrm,archdonn}{alarme}{1.5}
-		\multiliens{archdonn,accedonn}{donnarch}{0.5}
 		\multiliens{photo,alimcapt,captteau,capttcpt,confcapt}{accudonn}{1}
+		\liensparfaits{archdonn,accedonn}{imagorgi,vignette,tmpeauex,tmpintex,dateheur,idntpois}{0.5}{1}
 	\end{tikzpicture}
 	\caption{Diagramme fonctionnel}
 	\label{f:caf_diag_fonc}

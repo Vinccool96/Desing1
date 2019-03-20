@@ -9,4 +9,8 @@ Selon la demande du client, la transmission des informations et des alarmes doit
 L’interception et le détournement des données pourraient avoir un impact nocif pour le fonctionnement du système (alarmes) et du logiciel de traitement (base de données).
 Comme le système peut être dans un endroit éloigné comme dans un lac et difficilement détectable, il sera difficile pour un intrus de détecter le système et la connexion.
 C’est pourquoi sa pondération sera de 4~\%.
-Comme note, 1 sera attribué si la sécurité de connexion est excellente, 0,5 si elle est moyenne et 0 si elle n’est pas sécurisée.
+L'équation \ref{eq:cdc_sec_protaccdist} calcule le barème, où $b$ est la longueur de la clé de chiffrement en bits.
+
+\begin{equation}\label{eq:cdc_sec_protaccdist}
+	\left(\frac{b-128}{960}\right)^2
+\end{equation}

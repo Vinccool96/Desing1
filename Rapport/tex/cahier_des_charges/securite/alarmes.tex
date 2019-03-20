@@ -9,4 +9,9 @@ Selon la demande du client, le système sera composé d’un dispositif d’alar
 Dans le cas d’un malfonctionnement ou d’un bris, une alarme sera levée à l’opérateur du MFA afin d’assurer une réparation rapide pour minimiser la période réfractaire.
 Comme le système se trouve dans un milieu éloigné, il est important de savoir si le système fonctionne ou non.
 C’est pourquoi une pondération de 5~\% sera affectée à ce critère.
-Comme note, 1 sera attribué si les alarmes sont fonctionnelles et 0 si les alarmes sont absentes.
+\wl
+Le critère est évalué avec l'équation \ref{eq:cdc_sec_alar}, où $t$ est le nombre d'heures entre la création d'alarme et la réception de l'alarme par l'opérateur du MFA.
+
+\begin{equation}\label{eq:cdc_sec_alar}
+	5\left(e^{-x}\right)
+\end{equation}
