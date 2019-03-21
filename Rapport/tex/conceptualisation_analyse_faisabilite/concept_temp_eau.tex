@@ -1,0 +1,96 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\section{Capter la température de l'eau}
+\label{s:faisab_temp_eau}
+Le capteur optique doit être déployé dans divers milieux, mais selon des contraintes bien précises de sorte qu’il est important de pouvoir connaître les caractéristiques du milieu en particulier. La température de l’eau dans laquelle le produit sera submergé doit se retrouver dans un intervalle de 4 à 25 degrés Celsius, il est donc important que le capteur possède un outil lui permettant de mesurer et d’afficher la température de l’eau. Ce dispositif de mesure de la température se doit d’être durable, car il doit fonctionner sans assistance pendant au moins 14 jours, de plus, puisque le capteur contient plusieurs autres composantes capitales, il ne faut pas que notre dispositif consomme beaucoup d’énergie sur la batterie du capteur. Les critères de faisabilité sont évalués selon les critères qui suivent :
+
+Aspects physiques:
+\begin{itemize}
+	\item Le caisson de la pièce doit être résistant à l’eau et durable
+	\item Les mesures prises doivent être affichées sur les vignettes, donc le dispositif doit être         
+	en mesure de communiquer avec l’ordinateur du capteur 
+	\item L’appareil doit fonctionner jusqu’à 50 pieds (15 mètres) sous l’eau
+	\item Le poids maximal sous l’eau est de 5 kilogrammes et le volume maximal sous l’eau est                  
+	de 0,3 mètre cube
+\end{itemize}
+
+Aspects économiques:
+\begin{itemize}
+	\item La pièce doit coûter le moins cher possible
+	\item Les coûts de main d’oeuvre doivent être minimisés (programmation supplémentaire) 
+\end{itemize}
+
+Aspects temporels:
+\begin{itemize}
+	\item L’appareil doit être disponible et pouvoir être livré dans les temps 
+\end{itemize}
+
+Aspects sociaux-environnementaux:
+\begin{itemize}
+	\item L’alimentation de l’appareil ne doit pas présenter de risque pour la faune avoisinante
+\end{itemize}
+
+\subsection{Thermomètre General outils Aq150} 
+
+\textbf{Description} : Ce thermomètre submersible de dimensions 1,3 x 5,1 x 7,3 cm, permet de prendre des mesures ambiantes, donc dans un milieu hors de l’eau, mais également dans un milieu aquatique grâce à une sonde qui se branche directement au reste du thermomètre. Cette sonde étanche assure la durabilité du produit et la justesse des mesures. La sonde du Aq150 peut mesurer des températures allant de -50 à 70 degrés Celsius. De plus, la précision des mesures se situe à plus ou moins 1 degré Celsius pour les mesures allant de -20 à 50 degrés Celsius. Le temps d’échantillonnage est de 10 secondes et la longueur du fil de la sonde est de 3m (10 pieds). L’appareil est également en mesure de déclencher une alarme automatiquement si jamais la température de l’eau dépasse ou descend sous une température fixée au préalable. Le poids total du produit est de 106 grammes (sonde plus afficheur) et celui-ci est alimenté par une batterie au lithium Energizer de type CR2032 qui est sans mercure et dont la durabilité peut varier (au moins plusieurs mois), mais qui respecte amplement la contrainte de 14 jours. Cet appareil, disponible pour la somme de 26.00\$ est disponible présentement et la livraison est rapide. Ce produit a reçu 5 étoiles sur 5 de la part des gens qui ont acheté le produit.  
+
+\textbf{Décision} : Retenu, mais
+
+\textbf{Justification} : L’appareil est résistant et vient avec son propre afficheur digital de température.  En contrepartie, pour pouvoir connecter la sonde directement au circuit imprimé, un adaptateur est nécessaire puisqu’à la base la sonde n’est pas conçue pour être connectée à un Raspberry Pi ou Arduino, mais plutôt à l’afficheur, ce qui risque d’augmenter le coût en plus de compliquer le fonctionnement global.
+
+\textbf{Références} : \cite{amazonAQ150}
+
+
+
+\subsection{Senseur Ultrasonic DFRobot} 
+
+
+\textbf{Description}:  Ce senseur est compatible avec les circuits imprimés de type Arduino et est considéré comme étant résistant aux intempéries notamment la pluie. La pièce est en mesure de prendre des mesures de température d’une plage allant de -10 à 70°C, la précision des valeurs n’est pas mentionnée par le fabricant. Ce modèle peut échantillonner des températures à des distance pouvant varier de 25 à 450 cm de la sonde. L’appareil est alimenté par une tension d’entrée de 5 Volts à l’aide d’un fil fourni dans l’emballage. Le fil en question et de 2,5 mètres de long, les dimensions sont de 4,0 cm par 2,8 cm tandis que le poids du produit est de 54 grammes. Le prix de cet ensemble est de 21,33\$ et il est disponible par livraison en ce moment. 
+
+\textbf{Décision}: Retenu, mais
+
+\textbf{Justification}: Bien que cet produit puisse communiquer avec un circuit imprimé et qu’il soit de faible coût, le fait qu’il ne soit pas spécifiquement submersible, mais plutôt résistant à la pluie risque de réduire la durée de vie de la sonde. 
+
+\textbf{Référence}: \cite{dfrobot1}
+
+\subsection{Capteur de température étanche Platinum PT100}
+
+
+\textbf{Description}: Le capteur PT100 permet de prendre des mesures de températures de haute précision allant de -20 ℃ à 250 ℃ que ce soit sous l’eau ou en dehors. Cette sonde peut être branchée sur un breadboard, peu importe la marque et son temps de réponse est de très courte durée (le temps exact n’est pas mentionné). La sonde est fait de platine et l’isolation interne du câble est composée de fibre de verre. L’emballage contient 10 capteurs déjà connectés à un fil de 50 cm, un seul capteur mesure 4 par 30 mm/0,15 par 0,5 cm et pèse environ 4 grammes. L’ensemble de 10 capteurs coûte 16,99\$ sur Amazon et la livraison est rapide.
+
+\textbf{Décision}: Retenu
+
+\textbf{Justification}: Ce produit est précis, simple à utiliser, performant en plus de convenir à n’importe quel type de circuit imprimé choisi. De plus, la grande quantité de composante représente un excellent rapport quantité et qualité prix.
+
+\textbf{Référence}: \cite{amazonPT100}
+
+
+
+\subsection{Senseur de température DS18B20 résistant à l’eau}
+
+
+\textbf{Description}: Ce senseur compatible avec le Raspberry Pi, est une version pré filée et résistante à l’eau du modèle DS18B20, qui sera utilisé plus tard pour la mesure de la température interne du caisson. Cette pièce est capable de prendre des mesures pouvant aller de -55 à 125°C avec une précision de plus ou moins 0,5°C. La pièce ne nécessite qu’un seul fil pour se connecter au Raspberry Pi et plusieurs senseurs peuvent être posés sur la même puce. De plus, elle est de grande précision, pouvant fournir jusqu’à 12 bit lors de la conversion. Une source d’alimentation allant de 3,0 à 5,0 V permet de faire fonctionner la pièce. La taille de la sonde est très minime, soit environ la taille d’une résistance pour breadboard. Le prix de la sonde est de 15,99\$ et elle est présentement disponible par commande en ligne. 
+
+\textbf{Décision}: Retenu, mais
+
+\textbf{Justification}: Le coût et la taille cette pièce sont minimes et il n’y a pas de problème pour l’environnement. Par contre, la pièce utilise le protocole Dallas 1-Wire qui est un peu complexe et qui requiert plusieurs codes pour analyser la communication. Cette étape de plus risque d’augmenter les coût de main d'oeuvre du projet.
+
+\textbf{Référence}: \cite{adafruitDS18B20}
+
+
+
+\begin{table}[!htbp]
+	\begin{tabular}{|l|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Concepts}}} & \multicolumn{4}{c|}{\textbf{Aspects de l'analyse}} & \multirow{2}{*}{\textbf{Décision}} \\ \cline{2-5}
+		\multicolumn{1}{|c|}{}                                   & Physiques & Économiques & Temporels & Socio-envir. &                                    \\ \hline
+		Aq150                                                  & OUI MAIS      & OUI MAIS        & OUI       & OUI          & RETENU MAIS                            \\ \hline
+		DFRobot                                                 & OUI MAIS      & OUI         & OUI       & OUI          & RETENU MAIS                            \\ \hline
+		PT100                                                 & OUI       & OUI         & OUI       & OUI          & RETENU                             \\ \hline
+		DS18B20 résistant à l’eau                                                 & OUI       & OUI MAIS        & OUI       & OUI          & RETENU	MAIS       \\ \hline
+	\end{tabular}
+	\caption{Décisions pour fonction "capter la température de l'eau"}
+	\label{tab:fct_tempeau}
+\end{table}
