@@ -1,0 +1,77 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\section{Accéder aux données}
+\label{s:faisab_acceder}
+Pour assurer une connexion en en tout temps avec le système, une interface d’utilisateur intuitive et simple pour quelqu’un qui n’a pas de connaissances avancées en informatique pour procurer un accès à distance sécurisé sur le dispositif pour permettre au technicien d’effectuer des configurations. Le système Fish and Chips doit donc être en mesure de publier les informations en temps réel pour que le technicien puisse voir l’état du système et il doit voir une alarme lors d’un malfonctionnement du système. L’accès au système doit être rapide et doit se faire dans un rayon de 1 km du système. Les critères de faisabilités pour cette section sont évalués selon les aspects suivants :
+
+Aspects physiques:
+\begin{itemize}
+	\item L’interface du système doit être simple d’utilisation pour quelqu’un qui n’est pas spécialisé en informatique
+	\item L’interface doit être accessible partout et en tout temps
+\end{itemize}
+
+Aspects économiques:
+\begin{itemize}
+	\item Minimiser le coût d’implantation du concept
+\end{itemize}
+
+Aspects temporels:
+\begin{itemize}
+	\item L’interface doit pouvoir être implanté dans les délais du projet
+\end{itemize}
+
+Aspects sociaux-environnementaux:
+\begin{itemize}
+	\item L’accès à l’interface doit être sécurisé
+\end{itemize}
+
+\subsection{Connection SSH avec le dispositif Fish and Chips et interface graphique sur localhost développée par un tiers}
+
+\textbf{Description}:
+Une connection SSH est une alternative qui est utilisée très fréquemment pour se connecter à un ordinateur ou un robot à distance, elle procure un accès sécurisé qui permet n’importe qui avec le mot de passe de se connecter au dispositif. Une fois que la connection est établie entre l’ordinateur de l’opérateur et du système une interface graphique s’affiche dans n’importe quel fureteur web à l’adresse localhost:4000 et de cet interface, l’opérateur peut voir: l’état du système, si des alarmes ont été soulevés et si la détection de poissons s’effectue avec succès. D’ailleurs, pour les alarmes, un système qui relie le numéro de cellulaire de l’opérateur et le système en lui envoyant un message “texto” est de mise pour signaler une alarme. Cette fonctionnalité permettrait de le contacter n’importe où pour régler le malfonctionnement du système. Le coût de développement pour le système est faible étant donné qu’aucun serveur doit être utilisé à l’externe, que l’interface graphique n’est pas complexe et que la connectivité SSH est déja établie sur presque tous les systèmes d’exploitation. De plus, le temps de développement est aussi petit, soit 15 semaines, dû à la petite quantité de programmes qui sont développés. Pour un interface web tel que spécifié ci-haut le coût s’élèverait à 20000\$.
+
+\textbf{Décision}: Retenue
+
+\textbf{Justification}: La connection SSH est une connection simple, sécurisée et qui permet d’éviter de mettre du temps de développement sur la connection, mais plutôt d’investir le temps dans un interface graphique de qualité.
+
+\subsection {Connection en passant par une application web développée par un tiers}
+
+\textbf{Description}: Une autre solution consiste à employer des programmeurs qui développeront une application web listée qui sera accessible par une authentification sur la page d'accueil. La page web sera disponible sur un ordinateur normal et sur un cellulaire en utilisant HTML5 et elle sera conforme avec toutes les plateformes sans avoir besoin d’investir du temps dans une compatibilité globale. De plus, la connection se fait directement avec le système Fish and Chips après l’authentification de l’opérateur. Pour la sécurité, l’utilisateur du site sera demandé de s’authentifier sur la page d’acceuil pour avoir accès au Fish and Chips et la seule manière d’y avoir accès est d’avoir un mot de passe qui sera transmis à l’opérateur seulement. La base de donnée utilisé est MySQL vu qu’elle est simple, mais elle est potentiellement dangereuse. C’est pourquoi pour la sécurité de la base de données, une attention particulière est de mise et le développement se conforme au protocole OWASP et l’accès au site web est encrypté afin d'empêcher l’interception du trafic. La durée de conception est de 25 semaines. Le coût est aux alentours de 30000\$ et c’est un prix qui inclut tous les éléments nécessaires au fonctionnement de l’interface.
+
+\textbf{Décision} : Retenue
+
+\textbf{Justification}: Cette option est la plus simple pour l’opérateur, car elle nécessite aucune connaissance en informatique, car celui-ci aura seulement besoin de se connecter sur le site web et s’authentifier pour avoir accès au système.
+
+\subsection {Programme local et application mobile développée par un tiers}
+
+\textbf{Description}:
+Une autre solution consiste à employer des développeurs pour créer deux applications locales soit une sur un ordinateur et une sur un téléphone cellulaire. Cette solution est une variante de la connection SSH dénotée plus haut, mais est une application à part entière plutôt que de faire appel à un fureteur web marchant sur localhost. L’avantage de cette solution est que comme l’application est téléchargée localement et effectue un contact direct en SSH avec le système le coût de développement en sécurité est très faible. De plus, l’utilisation est extrêmement simple l'exécution du programme se connecte directement avec le système pour ensuite afficher un interface graphique en local. Comme cette solution n’est pas portable il faut compiler un exécutable fait pour le système d’exploitation qu’ utilisera l’opérateur. Par contre, il faut créer une version pour une application mobile afin d’assurer le transfert des alarmes avec l’opérateur ce qui rajoute des coûts et du temps de développement. Ainsi, le temps de développement serait d'environ 30 semaines et les coûts d’environ 35000\$ ce qui est aux limites de notre budget.
+
+\textbf{Décision}: Retenue
+
+\textbf{Justification}: Cette alternative peut être efficace si nous tentons de minimiser les connections avec internet dans notre projet. Même si ce concept n’est pas le plus récent en manière de technologie, elle respecte quand même tous les critères et c’est pourquoi elle est retenue.
+
+\subsection {SSH avec une application dans la ligne de commande développée par un tiers}
+
+\textbf{Description}:
+La dernière solution consiste à construire une application qui a beaucoup de fonctionnalités et qui fonctionnera directement dans la ligne de commande. L’avantage de cette solution est que les coûts de développement sont très faible dû à l’abstention d’interface graphique en faisant appel à diverses commandes qui sont exécutés pour avoir un accès direct aux données et à l’état du système en l’imprimant dans le terminal. Par contre, l’inconvénient de cette solution est que pour utiliser cet interface efficacement il faut certaine connaissances en informatique que l’opérateur n’aura pas nécessairement. Le coût de développement de cette application serait faible soit environ 20000\$ dû à l’économie de temps qui surviendra d’éviter le développement d’un interface graphique et le temps de développement est de 20 semaines.
+
+\textbf{Décision}: Rejetée
+
+\textbf{Justification}: Cette interface exige des bonnes connaissances en informatique et tel que cité dans les aspects physiques, il est nécessaire de choisir un interface qui ne requiert pas des connaissances poussées en informatique.
+
+\begin{table}[!htbp]
+	\begin{tabular}{|l|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Concepts}}} & \multicolumn{4}{c|}{\textbf{Aspects de l'analyse}} & \multirow{2}{*}{\textbf{Décision}} \\ \cline{2-5}
+		\multicolumn{1}{|c|}{}                                   & Physiques & Économiques & Temporels & Socio-envir. &                                    \\ \hline
+		Connexion SSH                                                  & OUI       & OUI         & OUI       & OUI          & RETENU                             \\ \hline
+		Application web                                                 & OUI       & OUI         & OUI       & OUI          & RETENU                             \\ \hline
+		Programme local et application mobile                                                & OUI       & OUI         & OUI       & OUI          & RETENU                             \\ \hline
+		Ligne de commande                                                 & NON       & OUI         & OUI       & OUI          & REJETÉE	        \\ \hline
+	\end{tabular}
+	\caption{Décisions pour fonction "accéder aux données"}
+	\label{tab:fct_acceder}
+\end{table}

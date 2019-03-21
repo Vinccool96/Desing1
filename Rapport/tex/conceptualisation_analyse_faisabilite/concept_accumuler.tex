@@ -1,0 +1,77 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\section{Accumuler les données}
+\label{s:faisab_accumuler}
+
+Un dispositif local est nécessaire afin de coordonner tous les composantes. Notre système doit avoir un ordinateur localement afin de permettre de gérer toutes l’information qui proviennent des divers composantes soit: la caméra, les thermomètres, le sonar, le niveau d’alimentation de la batterie, les entrées de l’utilisateur à distance et la détection d’un malfonctionnement au niveau de ces composantes. D’ailleurs, l’ordinateur possèdera un espace de stockage de 64 Go localement, soit une carte Micro SD sandisk 64Gb à 15.71\$ qui sera livrée en deux jours, afin de pouvoir conserver les logiciels nécessaires au fonctionnement du système et de conserver les photos temporairement afin de les envoyer vers le API qui traitera les photos et détectera les poissons. De plus, l’ordinateur doit être en mesure d’envoyer les photos qu’il stocke et reçoit de la caméra pour les transférer au logiciel de traitement et envoyer les alarmes à l’utilisateur du système. C’est pourquoi une antenne wifi puissante lui sera assignée afin de pouvoir communiquer à l’opérateur situé à 1km de distance (l’antenne communiquera avec internet, donc le API, avec le poste de l’opérateur). Cette antenne sera la Antenna World G2424 qui s’élève à 149\$ et qui transmet le réseau wifi à une distance de 10 km. Les critères de faisabilités des concepts pour cette section sont évalués selon les aspects suivants:
+
+Aspects physiques:
+\begin{itemize}
+	\item Le système doit être assez petit pour être dans le contenant d’étanchéité du système
+	\item Le système doit contenir assez d’entrées pour tous les périphériques du système
+\end{itemize}
+
+Aspects économiques:
+\begin{itemize}
+	\item Minimiser les coûts de l’ordinateur
+\end{itemize}
+
+Aspects temporels:
+\begin{itemize}
+	\item L’ordinateur doit pouvoir être implanté dans les délais du projets.
+\end{itemize}
+
+Aspects sociaux-environnementaux:
+\begin{itemize}
+	\item L’ordinateur doit avoir la consommation électrique la plus faible possible
+\end{itemize}
+
+\subsection{Raspberry pi 3 B+}
+
+\textbf{Description}: Le Raspberry Pi 3 B+ est un microcontrôleur avec un processeur Broadcom BCM2837B0, Cortex-A53 64 bit qui génère une fréquence 1.4 GHz. Le processeur utilise une architecture ARMv8 et à 1Gb de SDRAM. Il possède aussi une carte LAN, Bluetooth 4.2 et BLE à deux fréquences soit 2.4 GHz et 5GHz. De plus, il possède quatres ports USB 2.0, un port HDMI, un port CSI pour connecter une caméra,  et un header GPIO de 40 pins. Il est possible d’installer n’importe quel système d’exploitation sur ce microcontrôleur et il vient préinstallé avec une distribution de linux spécifique aux Raspberry Pi soit une version Debian de Linux. Le Pi possède aussi un GPU pour un traitement de base des images et sa température d’opération est entre 0 et 50 degré Celsius. Il est à noter aussi que la consommation en électricité de cette carte est très faible malgré ses nombreuses composantes. Le coût de cette composante est 47.95\$ ce qui est un microcontrôleur entrée de gamme.
+
+\textbf{Décision}: Retenue
+
+\textbf{Justification}: Ce concept est retenu, car il comble tous les critères établis précédemment. De plus, la gamme de produits Raspberry Pi est reconnue dans l’industrie de l’informatique comme des microcontrôleurs, fiables, petits et performants.
+
+
+\subsection {ASUS Tinker Board}
+
+\textbf{Description}: Le ASUS Tinker Board est un microcontrôleur très performant avec un microprocesseur Rockchip RK3288 à quatres coeurs avec une architecture ARM et 1.8GHz de fréquence. Il possède aussi 2GB de DDR3 Ram et une carte wifi et bluetooth performante qui peut s’améliorer avec une antenne externe IPEX à 6.53\$. Le Tinker Board offre aussi un Mali-T764 comme GPU qui offre 16 coeurs et 600MHz comme vitesse d’horloge. Comme connections, ASUS offre 4 ports USB 2.0, une connection pour un cable HDMI, une connection auxiliaire 3.5mm et une connection MIPI DSI pour les connections analogues. Le microcontrôleur utilise une carte microSD pour stocker les données en mémoire et utilise TinkerOS comme système d’exploitation, une distribution Debian de Linux qui est préprogrammée avec le système. Le coût de l’ordinateur est 88.26\$ ce qui le place dans le milieu de la gamme des microcontrôleurs.
+
+\textbf{Décision}: Retenue
+
+\textbf{Justification}: Ce concept est retenu, car il respecte tous les critères établis précedemment. Le Tinker Board ce distingue des autres microcontrôleur par sa performance il est le plus performant de sa gamme avec une composition axée sur les opérations plus lourdes au niveau du processeur.
+
+\subsection {Odroid-C2}
+
+\textbf{Description}:
+Le Odroid-C2 est un microcontrôleur qui possède un processeur Amlogic S905 à quatre coeurs qui offre 1.5Ghz de fréquence. Il possède aussi un Mali-450 MP2 comme GPU et 2Go de RAM inclus et l’option de mettre 8Go de RAM. Le Odroid offre 4 ports USB, une connection ethernet, un port HDMI, 40 entrées analogues et une sortie 4K 60Hz vidéo. De plus, ce microcontrôleur a une très faible consommation en énergie. Il est possible d’installer Ubuntu 16.04 ou Android 6.0 Marshmallow comme système d’exploitation. Le coût de l’ordinateur est de 46\$ ce qui le place dans la même gamme que le Raspberry Pi 3B+.
+
+\textbf{Décision}: Retenue
+
+\textbf{Justification}: Ce concept est retenu, car il respecte tous les critères établis précedemment et il est une excellente alternative au Raspberry Pi 3B+.
+
+\subsection {UDOO x86 ADVANCED PLUS}
+
+\textbf{Description}: Le UDOO x86 ADVANCED PLUS est un des microcontrôleurs les plus puissants sur le marché. Il possède un microprocesseur Intel Celeron N3160 avec quatre coeurs et 2.24 GHz de fréquence et 4GB de DDR3L Dual Channel RAM. Il possède une carte graphique comparable à celles dans les ordinateurs portables modernes soit une Intel HD Graphics 400 qui peut monter jusqu’à 640 MHz de vitesse d’horloge. Le système possède une connection HDMI et deux connections miniDP++. De plus, le UDOO vient avec 32Go de mémoire inclus dans la carte mère, une fente M.2 Key B SSD et une fente pour insérer une carte microSD supplémentaire. Le système ne vient pas avec une carte Wifi intégrée comme les autres, mais elle a la possibilité d’être rajoutée et elle vient avec une connection ethernet. D’ailleurs, 3 ports USB 3.0 sont sur la carte-mère ainsi que deux connections UART et une connection auxiliaire pour le son. Il possède 20 entrées analogues GPIO et il peut utiliser Windows, n’importe quelle distribution de Linux et Android comme système d’exploitation. Par ailleurs, le UDOO possède deux parties soit une partie qui est comme un ordinateur et une partie qui est comme un microcontrôleur Arduino avec une connection directe entre le logiciel et les sorties analogues et il possède aussi des senseurs pour détecter l’accélération et un gyroscope. Le coût du UDOO x86 ADVANCED PLUS est de 174\$ c’est donc un microcontrôleur haut de gamme.
+
+\textbf{Décision}: Rejetée
+
+\textbf{Justification}: Même si ce microcontrôleur possède beaucoup d’options et de fonctionnalités et est très performant, la plupart des ces fonctionnalités ne seront pas utilisées pour le projet Fish and Chips étant donné de la nature de celui-ci. Ainsi, il serait plus justifiable d’aller avec un autre microcontrôleur moins cher avec moins de fonctionnalités mais qui est tout de même capable d’accomplir le travail nécessaire.
+
+\begin{table}[!htbp]
+	\begin{tabular}{|l|c|c|c|c|c|}
+	\hline
+	\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Concepts}}} & \multicolumn{4}{c|}{\textbf{Aspects de l'analyse}} & \multirow{2}{*}{\textbf{Décision}} \\ \cline{2-5}
+	\multicolumn{1}{|c|}{}                                   & Physiques & Économiques & Temporels & Socio-envir. &                                    \\ \hline
+	Raspberry pi 3 B+                                                 & OUI       & OUI         & OUI       & OUI          & RETENU                             \\ \hline
+	ASUS Tinker Board                                               & OUI       & OUI         & OUI       & OUI          & RETENU                             \\ \hline
+	Odroid-C2                                                 & OUI       & OUI         & OUI       & OUI          & RETENU                             \\ \hline
+	UDOO X86 ADVANCED PLUS                                               & OUI       & NON         & OUI       & NON         & REJETÉ	        \\ \hline
+	\end{tabular}
+	\caption{Décisions pour fonction "accumuler les données"}
+	\label{tab:fct_acceder}
+\end{table}
