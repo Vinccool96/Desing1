@@ -1,0 +1,98 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = fr_FR
+
+
+\section{Capter la température à l’intérieur du caisson}
+\label{s:faisab_temp_caisson}
+
+L’ensemble du capteur qui sera submergé doit pouvoir rester 14 jours dans l’eau et prendre les mesures et accomplir les tâches sans assistance. Pour mener au bon fonctionnement du capteur, une contrainte de température interne a été fixée de +5 jusqu’à -10 degrés Celsius par rapport à l’eau. Pour bien superviser la température interne du caisson, le capteur doit posséder une composante pouvant mesurer la température interne et l’afficher sur les vignettes finales. Le thermomètre doit être simple à utiliser, précis et peu énergivore. L’analyse de faisabilité est évaluée selon les critères suivants:
+
+
+Aspects physiques:
+\begin{itemize}
+	\item Les mesures prises doivent être affichées sur les vignettes, donc le dispositif doit être         
+	en mesure de communiquer avec le capteur 
+	\item L’appareil doit fonctionner jusqu’à 50 pieds (15 mètres) sous l’eau et être durable
+	\item Le poids maximal sous l’eau est de 5 kilogrammes et le volume maximal sous l’eau est                  
+	de 0,3 mètre cube
+\end{itemize}
+
+Aspects économiques:
+\begin{itemize}
+	\item La pièce doit coûter le moins cher possible
+	\item Minimiser les coûts de main d’oeuvre (programmation supplémentaire)
+
+\end{itemize}
+
+Aspects temporels:
+\begin{itemize}
+	\item L’appareil doit être disponible et pouvoir être livré dans les temps 
+
+\end{itemize}
+
+Aspects sociaux-environnementaux:
+\begin{itemize}
+
+	\item L’alimentation de l’appareil ne doit pas présenter de risque pour la faune avoisinante
+\end{itemize}
+
+
+\subsection{Senseur de température DFRobot SEN0148 } 
+
+\textbf{Description} : Ce modèle de senseur est un modèle de niveau industriel antirouille, robuste et précis. La pièce peut se connecter à un circuit de type Arduino grâce à une interface à deux fils seulement. Le circuit est alimenté par une tension de 5 Volts et le fil mesure 90 cm. La plage de température se situe de -10 à 80°C avec une précision de plus ou moins 0,5 degrés Celsius. La taille du capteur en soit est de 49 mm par 14 mm. Le produit peut être livré très rapidement pour la somme de 36,12\$. 
+
+\textbf{Décision}: Retenu, mais
+
+\textbf{Justification}: Le seul petit bémol à propos de ce produit est le fait que la compatibilité avec les circuits Raspberry Pi n’est pas confirmée par le fabricant. Ce problème peut facilement être réglé en modifiant la sortie de la sonde, mais l’aspect physique n’est pas entièrement respecté. 
+
+\textbf{Référence}: \cite{dfrobot}
+
+
+
+\subsection{Senseur de température digital DS18B20 }
+
+
+\textbf{Description}: Ce senseur digital permet de prendre des mesures de températures pouvant aller de -55 à 125°C avec une précision de plus ou moins 0,5°C. La résolution peut être choisie parmi les options disponibles qui vont de 9 à 12 bits. La pièce ne nécessite qu’un seul fil pour se connecter au circuit et plusieurs senseurs peuvent être posés sur la même puce. Le produit offre la possibilité de programmer une alarme qui sera déclenchée si une limite de température est excédée. Une source d’alimentation allant de 3,0 à 5,0 V permet de faire fonctionner la pièce. La pièce est de très petite taille, soit environ la taille d’une pièce de 25 cents. Le prix de la pièce est de 3,95\$ et elle est disponible pour livraison par commande en ligne. 
+
+\textbf{Décision}: Retenu, mais
+
+\textbf{Justification}: La pièce utilise le protocole Dallas 1-Wire qui est un peu complexe et qui requiert plusieurs codes pour pouvoir analyser la communication. Cette étape de plus risque d’augmenter le coût en main d'oeuvre du projet.
+
+\textbf{Référence}: \cite{ds18b20}
+
+\subsection{Senseur de température DSD Tech DHT22 }
+
+
+\textbf{Description} : Cet appareil est un capteur de température et d’humidité à haute sensibilité développé par la compagnie DSD Tech. Ce senseur peut se connecter directement aux modules Arduino et Raspberry Pi en utilisant un branchement à trois broches. La plage de température de ce modèle est de -40 ℃ à 80 ℃ et le niveau de précision est de plus ou moins 0,5 degrés Celsius. L’alimentation suggérée par le fabricant est une tension de 3 à 5 Volts en courant continue. Le produit pèse 18,1 grammes et mesure 5,1 par 2,5 par 2,3 cm. Le prix du DHT22 est de 12,99\$ et la livraison est rapide. 
+
+\textbf{Décision} : Retenu 
+
+\textbf{Justification} : Le senseur de DSD Tech est petit, peu coûteux en plus d’être compatible avec différents types de circuits imprimés. La plage de température est conforme aux consignes et le produit respecte l’environnement.     
+
+\textbf{Référence} : \cite{dht22}
+
+
+\subsection{Longrunner détecteur de température Super9shop HT11}
+
+\textbf{Description}: Ce capteur de température compatible avec Raspberry Pi et l'Arduino UNO R3 Mega 2560 vient en paquet de 5 pièces. La plage de température se situe entre 0 et 50 degrés Celsius et l’erreur sur les mesures est de plus ou moins 2 degrés Celsius. L’ensemble des câbles de branchements sont donnés dans l’emballage et la tension d'utilisation est entre 3,3 et 5 Volts. Le poids est de 50 grammes et les dimensions, bien que pas sur la fiche technique, ne pose pas de problème puisqu’il s’agit d’une composante pour Raspberry Pi. Le paquet inclut 5 capteurs au total en plus des câbles de connexion nécessaire (20 pin mâle vers Dupont femelle) pour un poids total de 49,9 grammes. L’ensemble se vend à 24,99\$ sur Amazon et la livraison est rapide. 
+
+\textbf{Décision}: Retenu
+
+\textbf{Justification}: Le produit peut fonctionner avec plusieurs type de circuit imprimés en plus de venir en grande quantité pour assurer une solution rapide en cas de bris ou de problème quelconque. 
+
+\textbf{Référence}: \cite{longrunner}
+
+
+\begin{table}[!htbp]
+	\begin{tabular}{|l|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Concepts}}} & \multicolumn{4}{c|}{\textbf{Aspects de l'analyse}} & \multirow{2}{*}{\textbf{Décision}} \\ \cline{2-5}
+		\multicolumn{1}{|c|}{}                                   & Physiques & Économiques & Temporels & Socio-envir. &                                    \\ \hline
+		DFRobot SEN0148                                                 & OUI MAIS      & OUI         & OUI       & OUI          & RETENU MAIS                            \\ \hline
+		ConcepSenseur DS18B20                                                 & OUI       & OUI MAIS       & OUI       & OUI          & RETENU MAIS                            \\ \hline
+		Senseur DHT22                                                 & OUI       & OUI         & OUI       & OUI          & RETENU                             \\ \hline
+		Longrunner                                                 & OUI       & OUI         & OUI       & OUI          & RETENU	        \\ \hline
+	\end{tabular}
+	\caption{Décisions pour fonction "capter la température à l’intérieur du caisson"}
+	\label{tab:fct_tempscaisson}
+\end{table}
