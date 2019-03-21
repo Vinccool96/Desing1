@@ -1,98 +1,102 @@
+
 \section{Alimentation du système}
 
-	Le système d’alimentation sera maintenu en surface par un système de flottaison. Afin de comprendre les choix de batterie nous étudions l’ampérage par heure qu’elle fournit en fonction des besoins énergétiques de notre système. Notre système doit au minimum être alimenté 14 jours soit 336 heures. En référence aux autres composants énergivores de notre système nous trouvons une consommation totale de 900 Ampère, auquel on alloue une marge d’erreur de 20\% pour tenir compte de la déperdition d’énergie. Soit 1080 Ampère au total. Par souci d’analyse nous calculons les besoins énergétiques ainsi que les caractéristiques globales de nos batteries pour 14, 16, 18 et 20 jours. Les concepts sont retenus en fonction du poids et volume totale ainsi que le prix. Les montages de batteries seront en parallèle afin d’avoir une sommation simplifié de l’ampérage total.\\
+Le système d’alimentation sera maintenu en surface par un système de flottaison. Afin de comprendre les choix de batterie nous étudions l’ampérage par heure qu’elle fournit en fonction des besoins énergétiques de notre système. Notre système doit au minimum être alimenté 14 jours soit 336 heures. En référence aux autres composants énergivores de notre système nous trouvons une consommation totale de 900 Ampère, auquel on alloue une marge d’erreur de 20\% pour tenir compte de la déperdition d’énergie. Soit 1080 Ampère au total. Par souci d’analyse nous calculons les besoins énergétiques ainsi que les caractéristiques globales de nos batteries pour 14, 16, 18 et 20 jours. Les concepts sont retenus en fonction du poids et volume totale ainsi que le prix. Les montages de batteries seront en parallèle afin d’avoir une sommation simplifié de l’ampérage total.
 
-\begin{table}[htp]
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-                                                                                                & 14 jours & 16 jours & 18 jours & 20 jours \\ \hline
-Heures                                                                                          & 336      & 384      & 432      & 480      \\ \hline
-Ampères totale du système avec une marge de 20~\% (A) & 1080     & 1235     & 1390     & 1544     \\ \hline
-\end{tabular}
+\begin{table}[!hbtp]
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		& 14 jours & 16 jours & 18 jours & 20 jours \\ \hline
+		Heures                                                                                          & 336      & 384      & 432      & 480      \\ \hline
+		\begin{tabular}[c]{@{}c@{}}Ampères totale du système \\ avec une marge de 20\% (A)\end{tabular} & 1080     & 1235     & 1390     & 1544     \\ \hline
+	\end{tabular}
 \end{table}
+
+
+Consommation en ampère total du système pour 14 jours = [ 840A ( Ordinateur local) + 40.32A (Caméra) + 10.08A (Sonar) + 6.72A (Capteur de température) ] * 1.2 (marge d’erreur)
+
+\cite{montagebatterie,autonomiebatterie}
+
+	\subsection{Lithium Ion Battery - 18650 Cell}
+	\textbf{Description :} 
+	Une pile pesant 46 grammes pour un volume total de 21.53 cm3. Elle possède une capacité de 2,6 Ampères et à un prix de 7,93 dollars. Afin de répondre à nos besoins en énergie il en faut 415 unités.\\
+	\begin{table}[H]
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Jours & Ampère & \begin{tabular}[c]{@{}c@{}}Nombre \\ batterie\end{tabular} & \begin{tabular}[c]{@{}c@{}}Poids \\ Total (kg)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Volume \\ Total (cm3)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Prix \\ Total (\$)\end{tabular} \\ \hline
+			14    & 1080   & 415                                                        & 19,09                                                       & 8934,95                                                       & 3290,95                                                    \\ \hline
+			16    & 1235   & 475                                                        & 21,85                                                       & 10226,75                                                      & 3766,75                                                    \\ \hline
+			18    & 1390   & 534                                                        & 24,56                                                       & 11497,02                                                      & 4234,62                                                    \\ \hline
+			20    & 1544   & 593                                                        & 27,28                                                       & 12767,29                                                      & 4702,49                                                    \\ \hline
+		\end{tabular}
+	\end{table}
 	
+	\textbf{Décision :} Retenu, mais\\
+	\textbf{Justification :} Le poids est parfait pour une flottaison ainsi que son volume totale pour ne pas dégrader le paysage. Cependant le nombre important d’unité va demander un prix en main d’œuvre élevé pour établir le système.\\
+	\textbf{Référence : }
+	\cite{Batterie3A}
 	
-	Consommation en ampère total du système pour 14 jours = [ 840A ( Ordinateur local) + 40.32A (Caméra) + 10.08A (Sonar) + 6.72A (Capteur de température) ] * 1.2 (marge d’erreur)
-
-	    \subsection{Lithium Ion Battery - 18650 Cell}
-\subsubsection{Description :} 
-Une pile pesant 46 grammes pour un volume total de 21.53 cm3. Elle possède une capacité de 2,6 Ampères et à un prix de 7,93 dollars. Afin de répondre à nos besoins en énergie il en faut 415 unités.
-\begin{table}[H]
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Jours & Ampère & \begin{tabular}[c]{@{}c@{}}Nombre \\ batterie\end{tabular} & \begin{tabular}[c]{@{}c@{}}Poids \\ Total (kg)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Volume \\ Total (cm3)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Prix \\ Total (\$)\end{tabular} \\ \hline
-14    & 1080   & 415                                                        & 19,09                                                       & 8934,95                                                       & 3290,95                                                    \\ \hline
-16    & 1235   & 475                                                        & 21,85                                                       & 10226,75                                                      & 3766,75                                                    \\ \hline
-18    & 1390   & 534                                                        & 24,56                                                       & 11497,02                                                      & 4234,62                                                    \\ \hline
-20    & 1544   & 593                                                        & 27,28                                                       & 12767,29                                                      & 4702,49                                                    \\ \hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Décision :} Retenu, mais
-\subsubsection{Justification :} Le poids est parfait pour une flottaison ainsi que son volume totale pour ne pas dégrader le paysage. Cependant le nombre important d’unité va demander un prix en main d’œuvre élevé pour établir le système.
-\subsubsection{Référence : } 
-
-
-\subsection{Lithium Ion Battery - 6Ah}
-\subsubsection{Description :} 
-Une batterie pesant 150 grammes pour un volume de 20.04 cm3. Elle possède une capacité de 6 Ampères et à un prix de 29,95 dollars. Afin de répondre à nos besoins en énergie il en faut 180 unités.
-
-\begin{table}[!hbtp]
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Jours & Ampère & Nombre batterie & Poids Total (kg) & Volume Total (cm3) & Prix Total (\$) \\ \hline
-14    & 1080   & 180                                                        & 27                                                          & 3672                                                          & 5391            \\ \hline
-16    & 1235   & 205                                                        & 30,75                                                       & 4182                                                          & 6139,75         \\ \hline
-18    & 1390   & 231                                                        & 34,65                                                       & 4712,4                                                        & 6918,45         \\ \hline
-20    & 1544   & 257                                                        & 38,55                                                       & 5242,8                                                        & 7697,15         \\ \hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Décision :} 
-Retenu
-\subsubsection{Justification :} 
-Il y a un bon compromis entre poids, nombre d’unité et prix total.
-\subsubsection{Référence : } 
-
-\subsection{PANASONIC LC-R0612P}
-\subsubsection{Description :} 
-Une batterie pesant 2000 grammes pour un volume de 128.04 cm3. Elle possède une capacité de 12 Ampères et à un prix de 29,46 dollars. Afin de répondre à nos besoins en énergie il en faut 90 unités.\\
-\begin{table}[!hbtp]
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Jours & Ampère & Nombre batterie & Poids Total (kg) & Volume Total (cm3) &  Total (\$) \\ \hline
-14    & 1080   & 90                                                         & 180                                                         & 11523,6                                                       & 2651,4                                                     \\ \hline
-16    & 1235   & 102                                                        & 204                                                         & 13060,08                                                      & 3004,92                                                    \\ \hline
-18    & 1390   & 115                                                        & 230                                                         & 14724,6                                                       & 3387,9                                                     \\ \hline
-20    & 1544   & 128                                                        & 256                                                         & 16389,12                                                      & 3770,88                                                    \\ \hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Décision :} 
-Non retenu
-\subsubsection{Justification :} 
-Le poids total est beaucoup trop élevé pour un système de flottaison
-\subsubsection{Référence : } 
-
-\subsection{Batterie rechargeable Lithium-Ion RS PRO}
-\subsubsection{Description :} 
-Une batterie pesant 186 grammes pour un volume de 94,32 cm3. Elle possède une capacité de 10,4 Ampères et à un prix de 58,63 dollars. Afin de répondre à nos besoins en énergie il en faut 103 unités.
-\begin{table}[!hbtp]
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Jours & Ampère & \begin{tabular}[c]{@{}c@{}}Nombre \\ batterie\end{tabular} & \begin{tabular}[c]{@{}c@{}}Poids \\ Total (kg)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Volume \\ Total (cm3)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Prix \\ Total (\$)\end{tabular} \\ \hline
-14    & 1080   & 103                                                        & 18,85                                                       & 9714,96                                                       & 6038,89                                                    \\ \hline
-16    & 1235   & 118                                                        & 21,59                                                       & 11129,76                                                      & 6918,34                                                    \\ \hline
-18    & 1390   & 133                                                        & 24,34                                                       & 12544,56                                                      & 7797,79                                                    \\ \hline
-20    & 1544   & 148                                                        & 27,08                                                       & 13959,36                                                      & 8677,24                                                    \\ \hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Décision :} 
-Retenue
-\subsubsection{Justification :} 
-Le faible poids est intéressant pour le système de flottaison. Le nombre d’unité reste correcte et le prix est raisonnable.
-\subsubsection{Référence : } 
+	\subsection{Lithium Ion Battery - 6Ah}
+	\textbf{Description :} 
+	Une batterie pesant 150 grammes pour un volume de 20.04 cm3. Elle possède une capacité de 6 Ampères et à un prix de 29,95 dollars. Afin de répondre à nos besoins en énergie il en faut 180 unités.\\
+	
+	\begin{table}[!hbtp]
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Jours & Ampère & \begin{tabular}[c]{@{}c@{}}Nombre \\ batterie\end{tabular} & \begin{tabular}[c]{@{}c@{}}Poids \\ Total (kg)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Volume \\ Total (cm3)\end{tabular} & Prix Total (\$) \\ \hline
+			14    & 1080   & 180                                                        & 27                                                          & 3672                                                          & 5391            \\ \hline
+			16    & 1235   & 205                                                        & 30,75                                                       & 4182                                                          & 6139,75         \\ \hline
+			18    & 1390   & 231                                                        & 34,65                                                       & 4712,4                                                        & 6918,45         \\ \hline
+			20    & 1544   & 257                                                        & 38,55                                                       & 5242,8                                                        & 7697,15         \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	\textbf{Décision :} 
+	Retenu\\
+	\textbf{Justification :} 
+	Il y a un bon compromis entre poids, nombre d’unité et prix total.\\
+	\textbf{Référence : } 
+	\cite{Batterie6A}
+	\subsection{PANASONIC LC-R0612P}
+	\textbf{Description :} 
+	Une batterie pesant 2000 grammes pour un volume de 128.04 cm3. Elle possède une capacité de 12 Ampères et à un prix de 29,46 dollars. Afin de répondre à nos besoins en énergie il en faut 90 unités.\\
+	\begin{table}[!hbtp]
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Jours & Ampère & \begin{tabular}[c]{@{}c@{}}Nombre \\ batterie\end{tabular} & \begin{tabular}[c]{@{}c@{}}Poids \\ Total (kg)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Volume \\ Total (cm3)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Prix \\ Total (\$)\end{tabular} \\ \hline
+			14    & 1080   & 90                                                         & 180                                                         & 11523,6                                                       & 2651,4                                                     \\ \hline
+			16    & 1235   & 102                                                        & 204                                                         & 13060,08                                                      & 3004,92                                                    \\ \hline
+			18    & 1390   & 115                                                        & 230                                                         & 14724,6                                                       & 3387,9                                                     \\ \hline
+			20    & 1544   & 128                                                        & 256                                                         & 16389,12                                                      & 3770,88                                                    \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	\textbf{Décision :} 
+	Non retenu\\
+	\textbf{Justification :} 
+	Le poids total est beaucoup trop élevé pour un système de flottaison \\
+	\textbf{Référence : } 
+	\cite{Batterie12A}
+	\subsection{Batterie rechargeable Lithium-Ion RS PRO}
+	\textbf{Description :} 
+	Une batterie pesant 186 grammes pour un volume de 94,32 cm3. Elle possède une capacité de 10,4 Ampères et à un prix de 58,63 dollars. Afin de répondre à nos besoins en énergie il en faut 103 unités.\\
+	\begin{table}[!hbtp]
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Jours & Ampère & \begin{tabular}[c]{@{}c@{}}Nombre \\ batterie\end{tabular} & \begin{tabular}[c]{@{}c@{}}Poids \\ Total (kg)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Volume \\ Total (cm3)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Prix \\ Total (\$)\end{tabular} \\ \hline
+			14    & 1080   & 103                                                        & 18,85                                                       & 9714,96                                                       & 6038,89                                                    \\ \hline
+			16    & 1235   & 118                                                        & 21,59                                                       & 11129,76                                                      & 6918,34                                                    \\ \hline
+			18    & 1390   & 133                                                        & 24,34                                                       & 12544,56                                                      & 7797,79                                                    \\ \hline
+			20    & 1544   & 148                                                        & 27,08                                                       & 13959,36                                                      & 8677,24                                                    \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	\textbf{Décision :} 
+	Retenu\\
+	\textbf{Justification :} 
+	le faible poids est intéressant pour le système de flottaison. Le nombre d’unité reste correcte et le prix est raisonnable\\
+	\textbf{Référence : }
+	\cite{Batterie11A}
 \begin{table}[]
 	\begin{tabular}{|l|l|l|l|l|l|}
 		\hline
