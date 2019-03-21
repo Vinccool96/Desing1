@@ -95,6 +95,32 @@
 	\end{scope}
 }
 
+\newcommand{\background}[3]{
+	\begin{pgfonlayer}{background}
+		\begin{scope}[x=1em,y=1em]
+			\newdimen\dump
+			\newdimen\xgauche
+			\newdimen\yhaut
+			\newdimen\xdroit
+			\newdimen\ybas
+			\path(#1.west)--++(-1.5em,0em);
+			\pgfgetlastxy{\xgauche}{\dump}
+			\path(#1.north)--++(0em,1.5em);
+			\pgfgetlastxy{\dump}{\yhaut}
+			\path(#2.east)--++(1.5em,0em);
+			\pgfgetlastxy{\xdroit}{\dump}
+			\path(#2.south)--++(0em,-1.5em);
+			\pgfgetlastxy{\dump}{\ybas}
+			\coordinate (a) at (\xgauche, \yhaut);
+			\coordinate (b) at (\xdroit, \yhaut);
+			\coordinate (c) at (\xdroit, \ybas);
+			\coordinate (d) at (\xgauche, \ybas);
+			\draw[-,rounded corners,color=red] (a)--(b)--(c)--(d)--cycle;
+			\node[yshift=0.5em](center) at (barycentric cs:c=1,d=1) {#3};
+		\end{scope}
+	\end{pgfonlayer}
+}
+
 %manipulation string (pour liste)
 \newcommand{\getpremier}[1]{
 	\StrCount{#1}{,}[\nbrelems]
