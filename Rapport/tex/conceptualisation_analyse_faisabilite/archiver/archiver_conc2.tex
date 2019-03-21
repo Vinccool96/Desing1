@@ -5,11 +5,11 @@
 \subsection{Service nuagique Amazon S3}
 \label{s:archiver_conc2}
 
-\textbf{Description}:Amazon S3 est le service d'entreposage de données nuagique d’Amazon[refAmz]. Les données seront donc entreposées dans leur serveurs. Entreposer 1 To de données sur le service S3 Intelligent-Tiering coûtera un estimé 35\$ par mois, selon le niveau d’accès[refCalc](1To, 90\%, 50, 10000, 10000, 0, 10000, 1000).  Les frais d’entreposage des données sur 24 mois sont estimées à 840\$. Il en coûtera moins si on utilise moins d’espace. Amazon garantit la durabilité et l'accessibilité de nos données sur toute l’année.[refProt] Toutes les données sont entreposées de manière redondantes dans à différents lieux géographiques.
+\textbf{Description}:Amazon S3 est le service d'entreposage de données nuagique d’Amazon[refAmz]. Les données seront donc entreposées dans leur serveurs. Entreposer 1 To de données sur le service S3 Intelligent-Tiering coûtera un estimé 35\$ par mois, selon le niveau d’accès.  Les frais d’entreposage des données sur 24 mois sont estimées à 840\$. Il en coûtera moins si on utilise moins d’espace. Amazon garantit la durabilité et l'accessibilité de nos données sur toute l’année. Toutes les données sont entreposées de manière redondantes dans à différents lieux géographiques.
 
 \textbf{Décision}: Retenu
 
-\textbf{Justification}:  Le service Amazon S3 est élastique, donc on ne peut manquer de mémoire. L’intégrité de nos données est garantie à 99,999999999\%[refProt].L’espace d’entreposage peut être commandé à tout moment. Le prix est abordable dans le contexte du projet.
+\textbf{Justification}:  Le service Amazon S3 est élastique, donc on ne peut manquer de mémoire. L’intégrité de nos données est garantie à 99,999999999\%. L’espace d’entreposage peut être commandé à tout moment. Le prix est abordable dans le contexte du projet.
 
 \textbf{Références}: 
 \cite{amznS3, amznProt}
